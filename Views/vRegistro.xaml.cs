@@ -1,0 +1,23 @@
+namespace bguerreroS3.Views;
+
+public partial class vRegistro : ContentPage
+{
+	public vRegistro()
+	{
+		InitializeComponent();
+	}
+
+    private async void btnGuardarUsuario_Clicked(object sender, EventArgs e)
+    {
+        string usuarioNuevo = txtUsuarioNuevo.Text;
+        string contrasenaNueva = txtContrasenaNueva.Text;
+
+        await Navigation.PushAsync(new Views.vLogin(usuarioNuevo, contrasenaNueva));
+        await DisplayAlertAsync("Bienvenido", "Usuario registrado correctamente", "OK");
+    }
+
+    private async void btnCancelarUsuario_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.vLogin());
+    }
+}
