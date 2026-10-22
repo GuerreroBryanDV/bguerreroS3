@@ -3,6 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bguerreroS3.Views.vLogin"
              Title="vLogin">
+
+    <ContentPage.Resources>
+        <Style x:Key="styleLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Background" Value="DarkCyan"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="styleEntry" TargetType="Entry">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    
     <VerticalStackLayout
         Padding="30,40"
         Spacing="30">
@@ -43,6 +59,7 @@
 
             <Label 
                 Text="Usuario: "
+                Style="{StaticResource styleLabel}"
                 FontSize="18"
                 Grid.Row="0"
                 Grid.Column="0"
@@ -58,6 +75,7 @@
                 HorizontalOptions="Start" />
 
             <Label Text="Contraseña: "
+                Style="{StaticResource styleEntry}"
                 FontSize="18"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -74,6 +92,7 @@
                 HorizontalOptions="Start" />
 
             <Button x:Name="btnIniciarSesion"
+                    Style="{StaticResource btnGlobal}"
                     Text="Inciar sesion"
                     Clicked="btnIniciarSesion_Clicked"
                     Margin="0,15,0,0"
@@ -81,6 +100,7 @@
                     Grid.Column="0"/>
 
             <Button x:Name="btnRegistrarUsuario"
+                    Style="{StaticResource btnGlobal}"
                     Text="Registrar Usuario"
                     Clicked="btnRegistrarUsuario_Clicked"
                     Margin="0,15,0,0"
